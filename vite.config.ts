@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
-      base: '/P4ZZ-GIT-TESTE2/', // Use relative paths for GitHub Pages compatibility
+      base: './P4ZZ-GIT-TESTE2/', // Use relative paths for GitHub Pages compatibility
       server: {
         port: 3000,
         host: '0.0.0.0',
