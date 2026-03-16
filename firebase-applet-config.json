@@ -1,0 +1,10 @@
+{
+  "projectId": "db-secturismo",
+  "appId": "1:1007323848560:web:dff88d2273aac21c42b9b5",
+  "apiKey": "AIzaSyDyykSTigDSKPFytKW3NsEtFOfP35Y4gBM",
+  "authDomain": "db-secturismo.firebaseapp.com",
+  "databaseURL": "https://db-secturismo-default-rtdb.firebaseio.com",
+  "storageBucket": "db-secturismo.firebasestorage.app",
+  "messagingSenderId": "1007323848560",
+  "firestoreDatabaseId": "(default)"
+}

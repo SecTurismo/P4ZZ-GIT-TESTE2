@@ -1,0 +1,68 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "System user or customer",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "customer", "employee", "affiliate"] },
+        "tenantId": { "type": "string" },
+        "active": { "type": "boolean" }
+      },
+      "required": ["id", "name", "email", "role", "tenantId"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Inventory product",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "price": { "type": "number" },
+        "stock": { "type": "number" },
+        "tenantId": { "type": "string" }
+      }
+    },
+    "Sale": {
+      "title": "Sale",
+      "description": "Sales record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "total": { "type": "number" },
+        "date": { "type": "string" },
+        "tenantId": { "type": "string" }
+      }
+    },
+    "AppSettings": {
+      "title": "AppSettings",
+      "description": "System configuration",
+      "type": "object",
+      "properties": {
+        "systemName": { "type": "string" },
+        "primaryColor": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "users": {
+      "schema": "User",
+      "description": "Global users collection"
+    },
+    "tenants/{tenantId}/products": {
+      "schema": "Product",
+      "description": "Products per tenant"
+    },
+    "tenants/{tenantId}/sales": {
+      "schema": "Sale",
+      "description": "Sales per tenant"
+    },
+    "tenants/{tenantId}/settings": {
+      "schema": "AppSettings",
+      "description": "Settings per tenant"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "P4ZZ Control",
+  "description": "Sistema profissional de controle de vendas, estoque e relatórios financeiros com suporte online e inteligência artificial.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

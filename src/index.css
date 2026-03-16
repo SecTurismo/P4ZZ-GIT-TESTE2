@@ -1,0 +1,243 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+    --global-font: 'Inter';
+    --primary-50: #eef2ff;
+    --primary-100: #e0e7ff;
+    --primary-500: #6366f1;
+    --primary-600: #4f46e5;
+    --primary-700: #4338ca;
+}
+
+body { 
+    margin: 0; 
+    padding: 0; 
+    font-family: var(--global-font), 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    touch-action: manipulation;
+}
+
+/* --- MOTOR DE ANIMAÇÕES P4ZZ --- */
+
+/* 1. FLUIDEZ: Movimento de gradientes (Aurora, Nebulosa, Carnaval, etc) */
+@keyframes fluid-bg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.theme-anim-fluid {
+    background-size: 400% 400% !important;
+    animation: fluid-bg 15s ease infinite !important;
+}
+
+/* 2. CHUVA DIGITAL: Efeito Matrix / Fluxo de Dados */
+@keyframes data-rain {
+    from { background-position: 0 0; }
+    to { background-position: 0 1000px; }
+}
+.theme-anim-matrix {
+    background-image: linear-gradient(rgba(0, 255, 70, 0.1) 2px, transparent 2px),
+                      linear-gradient(90deg, rgba(0, 255, 70, 0.1) 2px, transparent 2px) !important;
+    background-size: 30px 30px !important;
+    animation: data-rain 25s linear infinite !important;
+}
+
+/* 3. NEVE: Efeito de partículas (Natal / Glaciar) */
+@keyframes snow-fall {
+    0% { background-position: 0px 0px, 0px 0px, 0px 0px; }
+    100% { background-position: 500px 1000px, 400px 400px, 300px 300px; }
+}
+.theme-anim-snow {
+    background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.8) 1.5px, transparent 2px),
+                      radial-gradient(circle at 20% 80%, rgba(255,255,255,0.5) 1px, transparent 1.5px) !important;
+    background-size: 200px 200px, 300px 300px !important;
+    animation: snow-fall 35s linear infinite !important;
+}
+
+/* 4. CINTILAÇÃO: Efeito Estelar e Ano Novo */
+@keyframes sparkle {
+    0%, 100% { opacity: 0.7; filter: brightness(1); }
+    50% { opacity: 1; filter: brightness(1.5); }
+}
+.theme-anim-stars {
+    background-image: radial-gradient(1px 1.5px at 15px 25px, #fff, rgba(0,0,0,0)),
+                      radial-gradient(1.5px 2px at 65px 95px, #fff, rgba(0,0,0,0)),
+                      radial-gradient(2px 2px at 110px 160px, #ddd, rgba(0,0,0,0)) !important;
+    animation: sparkle 6s ease-in-out infinite !important;
+}
+
+/* 5. PULSAÇÃO TÉRMICA: Fogo, Halloween, Cyberpunk */
+@keyframes heat-pulse {
+    0%, 100% { box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.02); filter: saturate(1); }
+    50% { box-shadow: inset 0 0 120px rgba(255, 255, 255, 0.08); filter: saturate(1.2); }
+}
+.theme-anim-pulse {
+    animation: heat-pulse 5s ease-in-out infinite !important;
+}
+
+/* 6. SOLAR: Brilho de Verão */
+@keyframes sun-glow {
+    0%, 100% { filter: contrast(1) brightness(1); }
+    50% { filter: contrast(1.1) brightness(1.1); }
+}
+.theme-anim-sun {
+    animation: sun-glow 10s ease-in-out infinite !important;
+}
+
+/* --- ANIMAÇÕES DE MARKETING P4ZZ --- */
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+.animate-floating { animation: floating 3s ease-in-out infinite; }
+
+@keyframes wave {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+.animate-wave { animation: wave 2s ease-in-out infinite; }
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+.animate-shake { animation: shake 0.5s ease-in-out infinite; }
+
+@keyframes zoom {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+.animate-zoom { animation: zoom 3s ease-in-out infinite; }
+
+@keyframes slide-side {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(30px); }
+}
+.animate-slide-side { animation: slide-side 4s ease-in-out infinite; }
+
+@keyframes swing {
+    0%, 100% { transform: rotate(0); }
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-10deg); }
+    60% { transform: rotate(5deg); }
+    80% { transform: rotate(-5deg); }
+}
+.animate-swing { animation: swing 2s ease-in-out infinite; }
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    10% { transform: scale(1.1); }
+    20% { transform: scale(1); }
+    30% { transform: scale(1.2); }
+    40% { transform: scale(1); }
+}
+.animate-heartbeat { animation: heartbeat 1.5s ease-in-out infinite; }
+
+@keyframes rubber-band {
+    0% { transform: scale(1); }
+    30% { transform: scaleX(1.25) scaleY(0.75); }
+    40% { transform: scaleX(0.75) scaleY(1.25); }
+    50% { transform: scaleX(1.15) scaleY(0.85); }
+    65% { transform: scaleX(0.95) scaleY(1.05); }
+    75% { transform: scaleX(1.05) scaleY(0.95); }
+    100% { transform: scale(1); }
+}
+.animate-rubber-band { animation: rubber-band 1s ease-in-out infinite; }
+
+@keyframes rotate-y {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+.animate-rotate-y { animation: rotate-y 5s linear infinite; }
+
+/* --- ESTILOS DE LEITURA (PRESERVAÇÃO) --- */
+.sidebar-text-shadow {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+@media print {
+    .no-print { display: none !important; }
+    .print-only { display: block !important; }
+    
+    /* Force Light Mode for Print */
+    html, body { 
+        background: white !important; 
+        color: black !important; 
+        padding: 0 !important; 
+        margin: 0 !important; 
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    /* Reset layout for print */
+    aside, nav, .sidebar, .navbar, header.no-print { display: none !important; }
+    main, .main-content, #root > div > div { 
+        margin-left: 0 !important; 
+        padding: 0 !important; 
+        width: 100% !important; 
+        max-width: 100% !important;
+        display: block !important;
+    }
+    
+    @page { margin: 1cm; size: auto; }
+    
+    /* Thermal Receipt Specifics */
+    .thermal-print-mode @page { size: 80mm auto; margin: 0; }
+    .thermal-print-mode .thermal-receipt { width: 100%; max-width: 80mm; padding: 4mm; font-family: 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.1; }
+    .thermal-print-mode .thermal-receipt hr { border: none; border-top: 1px dashed black; margin: 4px 0; }
+    
+    /* Kitchen vs Customer Print Modes */
+    .print-mode-kitchen .customer-header,
+    .print-mode-kitchen .financial-footer,
+    .print-mode-kitchen .item-price-col {
+        display: none !important;
+    }
+
+    .print-mode-customer .kitchen-only {
+        display: none !important;
+    }
+    
+    /* General Print Fixes */
+    .shadow-2xl, .shadow-xl, .shadow-lg, .shadow-md, .shadow-sm, .shadow { box-shadow: none !important; }
+    .rounded-[3rem], .rounded-[2.5rem], .rounded-2xl, .rounded-xl { border-radius: 4px !important; border: 1px solid #eee !important; }
+    
+    /* Prevent breaks */
+    .print-break-avoid, tr, .card, section {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+    
+    /* Ensure charts are visible */
+    .recharts-responsive-container {
+        width: 100% !important;
+        height: 300px !important;
+        display: block !important;
+    }
+    
+    /* Override dark mode utility classes */
+    .dark { background-color: white !important; color: black !important; }
+    .dark .bg-slate-900, .dark .bg-slate-950, .dark .bg-black { background-color: #f8fafc !important; color: black !important; }
+    .dark .text-white, .dark .text-slate-100 { color: black !important; }
+    .dark .border-slate-800, .dark .border-white\/10 { border-color: #eee !important; }
+}
+
+.print-only { display: none; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 0; }
+.dark ::-webkit-scrollbar-thumb { background: #1e293b; }
+
+/* MODO DEMO VIEWER: Estilos visuais */
+.is-demo-viewer aside button, 
+.is-demo-viewer header button,
+.is-demo-viewer .tab-btn {
+    pointer-events: auto !important;
+    opacity: 1 !important;
+}
